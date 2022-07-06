@@ -2,7 +2,7 @@ const theme = {
   background: '#FFFFFF',
   colors: {
     box: '#333333',
-    border: '#F7DF94'
+    border: '#80F'
   },
   text: {
     primary: '#333333',
