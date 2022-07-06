@@ -4,7 +4,9 @@ const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box
+    box-sizing: border-box;
+    /* width: 100%; */
+    /* height: 100%; */
   }
 
   html{
@@ -18,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
   body{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
+
 
 `
 
