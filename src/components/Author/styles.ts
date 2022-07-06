@@ -26,7 +26,6 @@ export const Container = styled.div`
   }
 
   :hover {
-    cursor: pointer;
     background-color: ${props => props.theme.colors.box};
 
     span {
@@ -34,6 +33,8 @@ export const Container = styled.div`
     }
 
     svg {
+      cursor: pointer;
+
       color: ${props => props.theme.text.author};
     }
   }
