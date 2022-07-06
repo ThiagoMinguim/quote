@@ -7,28 +7,15 @@ export const Container = styled.div`
   justify-content: space-between;
   padding: 5rem 2.9rem;
   margin: 0 auto;
-  background-color: ${props => props.theme.colors.box};
-
-  svg {
-    width: 9rem;
-    height: 3rem;
-
-    color: ${props => props.theme.text.author};
-  }
-`
-
-export const AuthorInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  gap: 0.8rem;
+  /* background-color: ${props => props.theme.colors.box}; */
+  background-color: none;
 
   span {
     font-weight: 700;
     font-size: 2.4rem;
     line-height: 2.8rem;
 
-    color: ${({ theme }) => theme.text.author};
+    color: ${({ theme }) => theme.text.secondary};
   }
 
   p {
@@ -37,4 +24,31 @@ export const AuthorInfo = styled.div`
 
     color: ${({ theme }) => theme.text.footer};
   }
+
+  :hover {
+    cursor: pointer;
+    background-color: ${props => props.theme.colors.box};
+
+    span {
+      color: ${({ theme }) => theme.text.author};
+    }
+
+    svg {
+      color: ${props => props.theme.text.author};
+    }
+  }
+
+  svg {
+    width: 9rem;
+    height: 3rem;
+
+    color: ${({ theme }) => theme.background};
+  }
+`
+
+export const AuthorInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.8rem;
 `
