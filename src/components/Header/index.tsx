@@ -1,11 +1,20 @@
 import { Container } from './styles'
 import { MdOutlineAutorenew } from 'react-icons/md'
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
+  const navigate = useNavigate()
+
+  function handleClick() {
+    navigate('/')
+  }
+
   return (
     <Container>
-      <span>random</span>
-      <MdOutlineAutorenew />
+      <button onClick={handleClick}>
+        <span>random</span>
+        <MdOutlineAutorenew />
+      </button>
     </Container>
   )
 }
