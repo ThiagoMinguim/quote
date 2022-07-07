@@ -7,7 +7,9 @@ const Author = () => {
     <>
       <Wrapper>
         <Header />
+
         <NameAuthor>Bill Gates</NameAuthor>
+
         <Phrase />
         <Phrase />
         <Phrase />

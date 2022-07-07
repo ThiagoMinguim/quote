@@ -6,6 +6,16 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   max-width: 96rem;
   padding-bottom: 2.5rem;
+
+  button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
 `
 export const NameAuthor = styled.span`
   font-weight: 700;
