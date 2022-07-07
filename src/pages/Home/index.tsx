@@ -1,5 +1,4 @@
-import Author from '@/components/Author'
-import Footer from '@/components/Footer'
+import RandomBox from '@/components/RandomBox'
 import Header from '@/components/Header'
 import Phrase from '@/components/Phrase'
 import { Wrapper, Content } from './styles'
@@ -11,10 +10,9 @@ const Home = () => {
         <Header />
         <Content>
           <Phrase />
-          <Author />
+          <RandomBox />
         </Content>
       </Wrapper>
-      <Footer />
     </>
   )
 }
