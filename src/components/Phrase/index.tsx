@@ -1,15 +1,16 @@
+import { SingleQuote, useQuote } from '@/hooks/quote-provider'
+import { useEffect } from 'react'
 import { Container, Content } from './styles'
 
-const Phrase = () => {
+interface PhraseProps {
+  text: string
+}
+
+const Phrase = ({ text }: PhraseProps) => {
   return (
     <Container>
       <Content>
-        <span>
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
-          veniam qui quod quo nesciunt laborum cum doloribus expedita quam ex
-          aliquam nam, deserunt rerum beatae accusantium voluptatibus enim
-          possimus facilis."
-        </span>
+        <span>{text}</span>
       </Content>
     </Container>
   )
