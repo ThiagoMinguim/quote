@@ -30,14 +30,12 @@
   - [Built With](#built-with)
 - [Features](#features)
 - [How to use](#how-to-use)
-- [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
 
 <!-- OVERVIEW -->
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![screenshot](<![quote](https://user-images.githubusercontent.com/77082563/178340572-4b1ab9b8-928b-4c5c-afb2-6ada68705cdf.gif)>)
 
 ### Built With
 
