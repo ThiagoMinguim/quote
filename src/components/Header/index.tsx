@@ -26,11 +26,9 @@ const Header = () => {
   // }, [getRandomQuote, location])
 
   return (
-    <Container>
-      <button onClick={handleFetchQuote}>
-        <span>random</span>
-        <MdOutlineAutorenew />
-      </button>
+    <Container onClick={handleFetchQuote}>
+      <span>random</span>
+      <MdOutlineAutorenew />
     </Container>
   )
 }
