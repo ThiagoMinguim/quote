@@ -8,11 +8,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://quote249.vercel.app/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://devchallenges.io/solutions/dQJ08Dmkn7wqUebuyyNf">
       Solution
     </a>
     <span> | </span>
@@ -35,7 +35,7 @@
 
 ## Overview
 
-![screenshot](<![quote](https://user-images.githubusercontent.com/77082563/178340572-4b1ab9b8-928b-4c5c-afb2-6ada68705cdf.gif)>)
+![screenshot](![quote](https://user-images.githubusercontent.com/77082563/178340572-4b1ab9b8-928b-4c5c-afb2-6ada68705cdf.gif)
 
 ### Built With
 
