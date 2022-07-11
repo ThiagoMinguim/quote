@@ -10,7 +10,11 @@ const RandomBox = () => {
   const navigate = useNavigate()
 
   function handleClick() {
-    navigate('/author')
+    const search = new URLSearchParams({
+      name: quote?.quoteAuthor || ''
+    }).toString()
+
+    navigate({ pathname: '/author', search })
   }
 
   const quoteAuthor = quote ? quote.quoteAuthor : 'Author'
