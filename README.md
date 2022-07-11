@@ -35,7 +35,7 @@
 
 ## Overview
 
-![screenshot](![quote](https://user-images.githubusercontent.com/77082563/178340572-4b1ab9b8-928b-4c5c-afb2-6ada68705cdf.gif)
+![quote](https://user-images.githubusercontent.com/77082563/178340572-4b1ab9b8-928b-4c5c-afb2-6ada68705cdf.gif)
 
 ### Built With
 
