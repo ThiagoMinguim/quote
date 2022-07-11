@@ -1,6 +1,6 @@
 <!-- Please update value in the {}  -->
 
-<h1 align="center">{Quote}</h1>
+<h1 align="center">Quote</h1>
 
 <div align="center">
    Solution for a challenge from  <a href="http://https://devchallenges.io/challenges/8Y3J4ucAMQpSnYTwwWW8.io" target="_blank">Devchallenges.io</a>.
