@@ -1,24 +1,16 @@
-import { QuoteContext, SingleQuote, useQuote } from '@/hooks/quote-provider'
+import { QuoteContext, Quote, useQuote } from '@/hooks/quote-provider'
 import { useContext, useEffect } from 'react'
 import { Container, Content } from './styles'
 
 interface PhraseProps {
-  text: string
+  quote?: Quote | null
 }
 
-const Phrase = ({ text }: PhraseProps) => {
-  const { quote, getRandomQuote } = useContext(QuoteContext)
-
-  const quoteText = quote ? quote.quoteText : text
-
-  useEffect(() => {
-    getRandomQuote()
-  }, [])
-
+const Phrase = ({ quote }: PhraseProps) => {
   return (
     <Container>
       <Content>
-        <span>{quoteText}</span>
+        <span>{quote?.quoteText}</span>
       </Content>
     </Container>
   )
