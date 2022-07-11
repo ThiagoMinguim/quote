@@ -9,18 +9,18 @@ import { QuoteProvider } from './hooks/quote-provider'
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <BrowserRouter>
-        <QuoteProvider>
+    <QuoteProvider>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <BrowserRouter>
           <Routes>
-            <Route index element={<Home quote={} />} />
+            <Route index element={<Home />} />
             <Route path="author" element={<Author />} />
           </Routes>
-        </QuoteProvider>
-      </BrowserRouter>
-      <Footer />
-    </ThemeProvider>
+        </BrowserRouter>
+        <Footer />
+      </ThemeProvider>
+    </QuoteProvider>
   )
 }
 

@@ -2,26 +2,27 @@ import RandomBox from '@/components/RandomBox'
 import Header from '@/components/Header'
 import Phrase from '@/components/Phrase'
 import { Wrapper, Content } from './styles'
-import { SingleQuote, useQuote } from '@/hooks/quote-provider'
-import { useEffect } from 'react'
+import { QuoteContext, SingleQuote, useQuote } from '@/hooks/quote-provider'
+import { useContext, useEffect } from 'react'
 
-type HomeProps = {
-  quote: SingleQuote
-}
+// useEffect(() => {}, [])
 
-const Home = ({ quote }: HomeProps) => {
-  const { setQuote } = useQuote()
+const Home = () => {
+  const { getRandomQuote } = useContext(QuoteContext)
+  // const data = useContext(QuoteContext)
+  // console.log(data)
+  // const { setQuote } = useQuote()
 
-  useEffect(() => {
-    setQuote(quote)
-  }, [quote, setQuote])
+  // useEffect(() => {
+  //   getRandomQuote
+  // }, [])
 
   return (
     <>
       <Wrapper>
         <Header />
         <Content>
-          <Phrase text={quote.quoteAuthor} />
+          <Phrase />
           <RandomBox />
         </Content>
       </Wrapper>

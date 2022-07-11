@@ -1,20 +1,27 @@
 import { Container, AuthorInfo } from './styles'
 import { MdOutlineArrowRightAlt } from 'react-icons/md'
 import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import { QuoteContext } from '@/hooks/quote-provider'
 
 const RandomBox = () => {
+  const { quote } = useContext(QuoteContext)
+
   const navigate = useNavigate()
 
   function handleClick() {
     navigate('/author')
   }
 
+  const quoteAuthor = quote ? quote.quoteAuthor : 'Author'
+  const quoteGenre = quote ? quote.quoteGenre : 'Genre'
+
   return (
     <Container>
       <AuthorInfo>
-        <span>Bill Gates</span>
+        <span>{quoteAuthor}</span>
 
-        <p>business</p>
+        <p>{quoteGenre}</p>
       </AuthorInfo>
 
       <button onClick={handleClick}>

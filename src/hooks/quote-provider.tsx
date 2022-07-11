@@ -3,6 +3,7 @@ import {
   ReactNode,
   useCallback,
   useContext,
+  useEffect,
   useState
 } from 'react'
 import { api } from '@/services'
@@ -40,6 +41,10 @@ const QuoteProvider = ({ children }: QuoteProviderProps) => {
   const handleSetQuote = useCallback((quote: SingleQuote) => {
     setQuote(quote)
   }, [])
+
+  // useEffect(() => {
+  //   api.get('/random').then(({ data }) => setQuote(data.data[0]))
+  // }, [])
 
   return (
     <QuoteContext.Provider
