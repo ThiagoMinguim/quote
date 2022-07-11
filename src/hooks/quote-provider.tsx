@@ -12,7 +12,7 @@ export interface QuoteProviderProps {
   children: ReactNode
 }
 
-export interface SingleQuote {
+export interface Quote {
   _id: string
   quoteText: string
   quoteAuthor: string
@@ -20,26 +20,41 @@ export interface SingleQuote {
 }
 
 interface QuoteContextData {
-  quote: SingleQuote | null
+  authorQuotes: Quote[]
+  quote: Quote | null
   getRandomQuote: () => Promise<void>
-  setQuote: (quote: SingleQuote) => void
+  setQuote: (quote: Quote) => void
+  getAuthorQuotes: (author: string) => Promise<void>
 }
 
 export const QuoteContext = createContext({} as QuoteContextData)
 
 const QuoteProvider = ({ children }: QuoteProviderProps) => {
-  const [quote, setQuote] = useState<SingleQuote | null>(null)
+  const [quote, setQuote] = useState<Quote | null>(null)
+  const [authorQuotes, setAuthorQuotes] = useState<Quote[]>([])
 
   const getRandomQuote = useCallback(async () => {
     setQuote(null)
 
-    const { data } = await api.get<{ data: SingleQuote[] }>('/random')
+    const { data } = await api.get<{ data: Quote[] }>('/random')
 
     setQuote(data.data[0])
   }, [])
 
-  const handleSetQuote = useCallback((quote: SingleQuote) => {
+  const handleSetQuote = useCallback((quote: Quote) => {
     setQuote(quote)
+  }, [])
+
+  const getAuthorQuotes = useCallback(async (author: string) => {
+    setAuthorQuotes([])
+
+    const { data } = await api.get<{ data: Quote[] }>('', {
+      params: {
+        author,
+        limit: 3
+      }
+    })
+    setAuthorQuotes(data.data)
   }, [])
 
   // useEffect(() => {
@@ -48,7 +63,13 @@ const QuoteProvider = ({ children }: QuoteProviderProps) => {
 
   return (
     <QuoteContext.Provider
-      value={{ quote, getRandomQuote, setQuote: handleSetQuote }}>
+      value={{
+        quote,
+        authorQuotes,
+        getRandomQuote,
+        setQuote: handleSetQuote,
+        getAuthorQuotes
+      }}>
       {children}
     </QuoteContext.Provider>
   )
