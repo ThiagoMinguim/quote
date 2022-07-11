@@ -21,14 +21,4 @@ export const Container = styled.button`
     width: 1.6rem;
     height: 2.2rem;
   }
-
-  button {
-    /* background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit; */
-  }
 `

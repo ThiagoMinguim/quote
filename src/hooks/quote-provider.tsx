@@ -25,20 +25,25 @@ interface QuoteContextData {
   getRandomQuote: () => Promise<void>
   setQuote: (quote: Quote) => void
   getAuthorQuotes: (author: string) => Promise<void>
+  loading: boolean
 }
 
 export const QuoteContext = createContext({} as QuoteContextData)
 
 const QuoteProvider = ({ children }: QuoteProviderProps) => {
+  const [loading, setLoading] = useState(true)
+
   const [quote, setQuote] = useState<Quote | null>(null)
   const [authorQuotes, setAuthorQuotes] = useState<Quote[]>([])
 
   const getRandomQuote = useCallback(async () => {
+    setLoading(true)
     setQuote(null)
 
     const { data } = await api.get<{ data: Quote[] }>('/random')
 
     setQuote(data.data[0])
+    setLoading(false)
   }, [])
 
   const handleSetQuote = useCallback((quote: Quote) => {
@@ -46,6 +51,7 @@ const QuoteProvider = ({ children }: QuoteProviderProps) => {
   }, [])
 
   const getAuthorQuotes = useCallback(async (author: string) => {
+    setLoading(true)
     setAuthorQuotes([])
 
     const { data } = await api.get<{ data: Quote[] }>('', {
@@ -54,12 +60,9 @@ const QuoteProvider = ({ children }: QuoteProviderProps) => {
         limit: 3
       }
     })
+    setLoading(false)
     setAuthorQuotes(data.data)
   }, [])
-
-  // useEffect(() => {
-  //   api.get('/random').then(({ data }) => setQuote(data.data[0]))
-  // }, [])
 
   return (
     <QuoteContext.Provider
@@ -68,7 +71,8 @@ const QuoteProvider = ({ children }: QuoteProviderProps) => {
         authorQuotes,
         getRandomQuote,
         setQuote: handleSetQuote,
-        getAuthorQuotes
+        getAuthorQuotes,
+        loading
       }}>
       {children}
     </QuoteContext.Provider>

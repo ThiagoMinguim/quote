@@ -7,7 +7,6 @@ export const Container = styled.div`
   justify-content: space-between;
   padding: 5rem 2.9rem;
   margin: 0 auto;
-  /* background-color: ${props => props.theme.colors.box}; */
   background-color: none;
 
   span {

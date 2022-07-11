@@ -12,7 +12,6 @@ export const Container = styled.div`
   position: absolute;
   bottom: 0;
   margin-top: auto;
-  /* padding: 5rem 0; */
 
   span {
     font-weight: 700;

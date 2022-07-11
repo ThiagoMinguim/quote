@@ -1,5 +1,4 @@
-import { QuoteContext, Quote, useQuote } from '@/hooks/quote-provider'
-import { useContext, useEffect } from 'react'
+import { Quote } from '@/hooks/quote-provider'
 import { Container, Content } from './styles'
 
 interface PhraseProps {

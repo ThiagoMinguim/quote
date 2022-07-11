@@ -1,20 +1,23 @@
-import RandomBox from '@/components/RandomBox'
 import Header from '@/components/Header'
+import Loading from '@/components/Loading'
 import Phrase from '@/components/Phrase'
-import { Wrapper, Content } from './styles'
-import { QuoteContext, Quote, useQuote } from '@/hooks/quote-provider'
+import RandomBox from '@/components/RandomBox'
+import { QuoteContext } from '@/hooks/quote-provider'
 import { useContext, useEffect } from 'react'
-
-// useEffect(() => {}, [])
+import { Content, Wrapper } from './styles'
 
 const Home = () => {
-  const { quote, getRandomQuote } = useContext(QuoteContext)
+  const { quote, getRandomQuote, loading } = useContext(QuoteContext)
 
   const quoteText = quote ? quote.quoteText : ''
 
   useEffect(() => {
     getRandomQuote()
   }, [])
+
+  if (loading) {
+    return <Loading />
+  }
 
   return (
     <>
