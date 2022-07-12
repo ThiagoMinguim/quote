@@ -1,5 +1,5 @@
 import Lottie from 'react-lottie'
-import load_app from '../../../public/load_app.json'
+import load_app from '@/public/load_app.json'
 import { Container } from './styles'
 
 const Loading = () => {

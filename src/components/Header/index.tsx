@@ -10,7 +10,6 @@ const Header = () => {
 
   async function handleFetchQuote() {
     await getRandomQuote()
-    console.log(quote)
     navigate('/')
   }
 
