@@ -13,10 +13,6 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
 
-  /* html,body, #root{
-    min-height: 100vh;
-  } */
-
   body{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
@@ -25,8 +21,6 @@ const GlobalStyle = createGlobalStyle`
     
     padding-bottom: 6rem;
   }
-
-
 `
 
 export default GlobalStyle
